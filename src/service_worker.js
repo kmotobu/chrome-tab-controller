@@ -1,4 +1,4 @@
-let TABS_LIMIT = 5
+const TABS_LIMIT = 5
 /* 
     タブを開いた場合などで「タブを開く」「ページを開く」「ページの読み込みが終わる」
     は別イベント扱いになり、処理が重複するので、雑にフラグ処理で対応。
@@ -18,7 +18,7 @@ chrome.tabs.onUpdated.addListener(
 
 // 処理部
 async function main(){
-    let tabs = await chrome.tabs.query({url: "*://*/*"});
+    const tabs = await chrome.tabs.query({url: "*://*/*"});
     if (tabs.length > TABS_LIMIT){
         await tabEraser();
     }
