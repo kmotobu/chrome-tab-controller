@@ -1,0 +1,14 @@
+{
+    "name": "Chrome tab controller",
+    "description": "Control the number of tabs in Chrome and automatically close when the specified number is exceeded",
+    "version": "0.1",
+    "manifest_version": 3,
+    "background":{
+        "service_worker": "src/service_worker.js",
+        "type": "module"
+    },
+    "permissions":[
+        "tabs",
+        "background"
+    ]
+}
